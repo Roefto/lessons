@@ -29,7 +29,7 @@
 
     function parseSocialJson(arr){
         var social = "";
-        for(key in arr){
+        for(var key in arr){
             social += "<li>" + "<a href='" + arr[key].url + "'>"
                 + arr[key].title + "</a></li>"
         }
