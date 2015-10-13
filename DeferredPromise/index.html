@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/test.js"></script>
+    <link rel="stylesheet/less" type="text/css" href="css/style.less">
+    <script src="js/less.min.js"></script>
+</head>
+<body>
+
+
+
+<div class="lesson">
+    <div class="title"><p>Deferred/Promise</p></div>
+    <div class="inner">
+        <div class="task">
+            <div class="title"><p>Организовать подгрузку страниц аяксом с помощью промисов </p></div>
+            <div class="inner">
+                <nav class="menu" id="menu">
+                    <ul class="menu__list">
+                        <li class="menu__item">
+                            <a class="menu__link" href="home.html">Home</a>
+                        </li>
+                        <li class="menu__item">
+                            <a class="menu__link" href="about.html">About</a>
+                        </li>
+                        <li class="menu__item">
+                            <a class="menu__link" data-social="social.json" href="contacts.html">Contacts</a>
+                        </li>
+                    </ul>
+                </nav>
+                <main id="content" class="content"></main>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+    <div class="lesson">
+        <div class="title"><p>Числа</p></div>
+        <div class="inner">
+            <div class="task">
+                <div class="title"><p>Интерфейс суммы. Сложение цен. Дробная часть.</p></div>
+                <div class="inner">
+                    <p>Создайте страницу, которая предлагает ввести два числа и выводит их сумму.</p>
+                    <p>Округлить число.</p>
+                    <p>Вывести дробную часть.</p>
+
+                    <button id="lesson1-task1">Запустить</button>
+                </div>
+            </div>
+            <div class="task">
+                <div class="title"><p>Формула Бине</p></div>
+                <div class="inner">
+                    <p>Напишите функцию, которая будет вычислять Fn, используя данную формулу:  ϕn/√5.</p>
+
+                    <label for="fibBinet"></label><input type="text" value="Введите число" id="fibBinet">
+                    <button id="lesson1-task2">Запустить</button>
+                    <p>Число Фибоначчи: </p><p>Формула Бине: </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="lesson">
+        <div class="title"><p>Строки</p></div>
+        <div class="inner">
+            <div class="task">
+                <div class="title"><p>Сделать первый символ заглавным. Проверить спам.</p></div>
+                <div class="inner">
+                    <p>Напишите функцию, которая возвращает строку str с заглавным первым символом,
+                        используя toUpperCase() и charAt().</p>
+                    <p>Напишите функцию, которая возвращает true, если строка str содержит 'viagra' or 'XXX',
+                        а иначе false. Функция должна быть нечувствительна к регистру.</p>
+
+                    <label for="ucFirst"></label><input type="text" value="Введите текст" id="ucFirst">
+                    <button id="lesson2-task1">Запустить</button>
+                    <p></p><p></p>
+                </div>
+            </div>
+            <div class="task">
+                <div class="title"><p>Усечение строки. Выделить число.</p></div>
+                <div class="inner">
+                    <p>Создайте функцию, которая проверяет длину строки str, и если она превосходит maxlength —
+                        заменяет конец str на "...", так чтобы ее длина стала равна maxlength.</p>
+                    <p>Создайте функцию, которая будет выделять из строки число-значение,
+                        если перед ним стоит знак "$"<span class="overfulfillment">(Перевыполнено: выводит все чилсла, начинающиеся на "$")</span>.</p>
+
+                    <label for="truncate"></label>
+                    <textarea id="truncate">Введите текст, например: $234$asd $asd $23423 $asdasd$324$3$asd</textarea>
+                    <label for="l2-t2__input"></label><input type="text" value="Ограничить до:" id="l2-t2__input">
+                    <button id="lesson2-task2">Запустить</button>
+                    <p></p><p></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="lesson">
+        <div class="title"><p>Объекты: перебор свойств</p></div>
+        <div class="inner">
+            <div class="task">
+                <div class="title"><p>Все задания</p></div>
+                <div class="inner">
+                    <p>Создайте функцию, которая возвращает true, если в объекте нет свойств и false —
+                        если хоть одно свойство есть.</p>
+                    <p>Напишите код, который выведет сумму всех зарплат. Если объект пустой,
+                        то результат должен быть 0.</p>
+                    <p>Напишите код, который выведет имя сотрудника, у которого самая большая зарплата.</p>
+                    <p>Создайте функцию, которая получает объект и умножает все численные свойства на 2</p>
+
+                    <label for="isEmpty1"></label>
+                    <input type="text" value="Добавить/удалить" id="isEmpty1" class="empt">
+                    <label for="isEmpty2"></label>
+                    <input type="text" value="Значение/изменить" id="isEmpty2" class="empt">
+                    <button id="lesson5-task1">Запустить</button>
+                    <button id="lesson5-task1--multiple">Умножить численные свойства на 2</button>
+                    <p></p><p></p><p></p><p></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="lesson">
+        <div class="title"><p>Массивы c числовыми индексами</p></div>
+        <div class="inner">
+            <div class="task">
+                <div class="title"><p>Калькулятор, Случайное значение, Поиск в массиве, Фильтр диапазона</p></div>
+                <div class="inner">
+                    <p>Напишите код для вывода случайного значения из массива.</p>
+                    <p>Напишите код, который:</p>
+                    <ul>
+                        <li>Запрашивает по очереди значения при помощи prompt и сохраняет их в массиве.</li>
+                        <li>Заканчивает ввод, как только посетитель введёт пустую строку, не число или нажмёт «Отмена».</li>
+                        <li>При этом ноль 0 не должен заканчивать ввод, это разрешённое число.</li>
+                        <li>Выводит сумму всех значений массива</li>
+                    </ul>
+                    <p>Создайте функцию, которая ищет в массиве arr значение value и возвращает его номер
+                        <span class="overfulfillment">(Перевыполнено: ищет все совпадения)</span>.</p>
+                    <p>Создайте функцию , которая принимает массив чисел и возвращает новый массив,
+                        который содержит только числа из arr из диапазона.</p>
+                    <p></p>
+
+                    <label for="filterstart"></label>
+                    <input type="text" value="Ораничить от:" id="filterstart" class="">
+                    <label for="filterend"></label>
+                    <input type="text" value="Ораничить до:" id="filterend" class="">
+                    <label for="findval"></label>
+                    <input type="text" value="Искать значение" id="findval" class="">
+                    <button id="lesson7-task1">Запустить</button>
+                    <p></p><p></p><p></p>
+                </div>
+            </div>
+
+            <div class="task">
+                <div class="title"><p>Решето Эратосфена</p></div>
+                <div class="inner">
+                    <p>Целое число, большее 1, называется простым, если оно не делится нацело ни на какое другое, кроме себя и 1.</p>
+                    <p>Древний алгоритм «Решето Эратосфена» для поиска всех простых чисел до n выглядит так:</p>
+                    <ol>
+                        <li>Создать список последовательных чисел от 2 до n: 2, 3, 4, ..., n.</li>
+                        <li>Пусть p=2, это первое простое число.</li>
+                        <li>Зачеркнуть все последующие числа в списке с разницей в p, т.е. 2*p, 3*p, 4*p и т.д. В случае p=2 это будут 4,6,8....</li>
+                        <li>Поменять значение p на первое не зачеркнутое число после p.</li>
+                        <li>Повторить шаги 3-4 пока p2 < n.</li>
+                        <li>Все оставшиеся не зачеркнутыми числа — простые.</li>
+                    </ol>
+                    <p>Реализуйте «Решето Эратосфена», используя массив.</p>
+                    <p>Найдите все простые числа до 100 и выведите их сумму<span class="overfulfillment">(Перевыполнено: можно задать массив с произвольным началом и концом)</span>.</p>
+
+                    <label for="arrstart"></label>
+                    <input type="text" value="Начальное значение" id="arrstart" class="">
+                    <label for="arrend"></label>
+                    <input type="text" value="Конечное значение" id="arrend" class="">
+                    <button id="lesson7-task2">Запустить</button>
+
+                    <p></p><p></p><p></p>
+                </div>
+            </div>
+
+            <div class="task">
+                <div class="title"><p>Подмассив наибольшей суммы</p></div>
+                <div class="inner">
+                    <p>На входе массив чисел, например: arr = [-1, 2, 3, -9, 11, -1, -5, -4, 10, -5, 10, -4, 3].</p>
+                    <p>Задача — найти непрерывный подмассив arr, сумма элементов которого максимальна.</p>
+                    <p>Если все элементы отрицательные, то не берём ни одного элемента и считаем сумму равной нулю.</p>
+                    <p>Функция должна возвращать только эту сумму<span class="overfulfillment">(Перевыполнено: Выводит массив с выделенным подмассивом наибольшей суммы)</span>.</p>
+
+                    <label for="arrsum">Введите числа через запятую: </label><br>
+                    <textarea id="arrsum">-1, 2, 3, -9, 11, -1, -5, -4, 10, -5, 10, -4, 3</textarea>
+                    <button id="lesson7-task3">Запустить</button>
+
+                    <p></p><p></p><p></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="lesson">
+        <div class="title"><p>Массивы: методы</p></div>
+        <div class="inner">
+            <div class="task">
+                <div class="title"><p>Добавить класс в строку, Функция removeClass</p></div>
+                <div class="inner">
+                    <p>В объекте есть свойство className, которое содержит список «классов» – слов, разделенных пробелом:</p>
+                    <p>Создайте функцию addClass(obj, cls), которая добавляет в список класс cls, но только если его там еще нет.</p>
+                    <p>Ваша функция не должна добавлять лишних пробелов.</p>
+                    <p>Напишите функцию removeClass(obj, cls), которая удаляет класс cls, если он есть.</p>
+                    <p>P.S. Дополнительное усложнение. Функция должна корректно обрабатывать дублирование класса в строке.</p>
+
+                    <p>Начальный объект классов:</p>
+                    <p class="mark">my menu menu menu menu</p>
+                    <input type="text" value="Добавить/удалить" id="setClass" class="">
+                    <button id="lesson8-task1">Запустить</button>
+                    <p></p><p></p><p></p><p></p>
+                </div>
+            </div>
+
+            <div class="task">
+                <div class="title"><p>Отфильтровать анаграммы</p></div>
+                <div class="inner">
+                    <p>Анаграммы — слова, состоящие из одинакового количества одинаковых букв, но в разном порядке.</p>
+                    <p>Напишите функцию aclean(arr), которая возвращает массив слов, очищенный от анаграмм.</p>
+                    <p>Из каждой группы анаграмм должно остаться только одно слово, не важно какое.</p>
+
+                    <label for="anagrams">Введите слова через пробел: </label><br>
+                    <textarea id="anagrams">воз киборг корсет ЗОВ гробик костер сектор</textarea>
+                    <button id="lesson8-task2">Запустить</button>
+                    <p></p><p></p><p></p><p></p>
+                </div>
+            </div>
+
+            <div class="task">
+                <div class="title"><p>Оставить уникальные элементы массива</p></div>
+                <div class="inner">
+                    <p>Напишите функцию unique(arr), которая возвращает массив, содержащий только уникальные элементы arr.</p>
+
+                    <label for="unique">Введите слова через пробел: </label><br>
+                    <textarea id="unique">кришна кришна харе харе харе харе кришна кришна 8-()</textarea>
+                    <button id="lesson8-task3">Запустить</button>
+                    <p></p><p></p><p></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>
