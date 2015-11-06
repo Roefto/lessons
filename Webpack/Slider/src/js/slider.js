@@ -25,4 +25,27 @@ $(document).ready(function(){
             dots : true
         });
     });
+
+    /*
+    var cache = {};
+
+    function callback(src) {
+        delete cache[src];
+        for(var key in cache) return false;
+
+        slider.append(images);
+        slider.slick({
+            dots : true
+        });
+    }
+
+    for(var i = 1; i <= numberOfSlides; i++){
+        var src = require('../images/' + i + '.jpg');
+        var img = new Image();
+        img.src = src;
+        cache[src] = true;
+        img.onload = callback.bind(null, src);
+        images.push(img);
+    }
+    */
 });
