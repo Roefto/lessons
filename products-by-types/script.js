@@ -53,10 +53,12 @@ var products = {
                     break;
             }
 
-            item.innerHTML = template({
-                title: categoryTitle,
-                list: products[categoryId]
-            });
+            if(products[categoryId]){
+                item.innerHTML = template({
+                    title: categoryTitle,
+                    list: products[categoryId]
+                });
+            }
         });
     },
 
