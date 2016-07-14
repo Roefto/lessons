@@ -5,107 +5,27 @@
         <title>Товары</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css">
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-        <style>
-            body {
-                margin: 40px;
-            }
-            .category, .buttons-wrap {
-                overflow: hidden;
-            }
-            .category-title {
-                margin-bottom: 20px;
-            }
-            .products-list {
-                margin-bottom: 40px;
-                padding: 0;
-                overflow: hidden;
-            }
-            .products-list__item {
-                width: 33%;
-                float: left;
-                padding: 0 1%;
-                list-style-type: none;
-            }
-            .products-list__description {
-                font-weight: 600;
-            }
-            .load-error {
-                opacity: .8;
-                background-color: #000;
-                width: 44px;
-                height: 44px;
-                margin: auto;
-                position: absolute;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                border-radius: 6px;
-                color: #fff;
-                text-align: center;
-                animation-delay: .1s;
-            }
-            .popup-button {
-                width: 40%;
-                color: #000;
-                background: #fff;
-                margin: 0 5%;
-                border-bottom: 2px transparent;
-                border-style: double;
-                outline: none;
-                float: left;
-                display: block;
-            }
-            .popup-button_close:hover {
-                border-bottom-color: #d21d1d;
-            }
-            .popup-button_resend:hover {
-                border-bottom-color: #0bda2e;
-            }
-            .load-error, .content-wrap {
-                animation-duration: .5s;
-                -webkit-animation-fill-mode: forwards;
-                animation-fill-mode: forwards;
-            }
-            .content-wrap {
-                opacity: 0;
-                padding: 20px;
-                animation-delay: .5s;
-            }
-            @keyframes expand {
-                100% {width:300px;height: 100px}
-            }
-            .load-error._showed {
-                animation-name: expand;
-            }
-            @keyframes fadein {
-                100% {opacity: 1}
-            }
-            .load-error._showed .content-wrap {
-                animation-name: fadein;
-            }
-
-        </style>
+        <link rel="stylesheet" href="./style.css">
     </head>
     <body>
         <div id="sale" class="category js-category"></div>
         <div id="promo" class="category js-category"></div>
         <div id="recommended" class="category js-category"></div>
 
-        <script type="text/template" class="js-products-template">
+        <script id="categoryProductsTemplate" type="text/template">
             <h2 class="category-title"><%=title%></h2>
             <ul class="products-list">
-                <% for(var i = 0; i < list.length; i++) { %>
+                <% list.forEach(function (item) { %>
                     <li class="products-list__item">
-                        <img class="products-list__img" src="./media/products/<%=list[i].pic%>" alt="">
-                        <p class="products-list__description"><%=list[i].name%></p>
-                        <p class="products-list__price">Цена: <%=list[i].price%></p>
+                        <img class="products-list__img" src="./media/products/<%=item.pic%>" alt="">
+                        <p class="products-list__description"><%=item.name%></p>
+                        <p class="products-list__price">Цена: <%=item.price%></p>
                     </li>
-                <% } %>
+                <% }) %>
             </ul>
         </script>
 
-        <script type="text/template" class="js-error-message-template">
+        <script id="errorMessageTemplate" type="text/template">
             <div class="load-error js-error-popup">
                 <div class="content-wrap">
                     <p>Ой! Что-то пошло не так... Повторить?</p>

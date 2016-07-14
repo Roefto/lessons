@@ -1,32 +1,39 @@
+"use strict";
+
 var products = {
     init: function () {
-        var $this = this;
+        this.popupButtonsInit();
+        this.getProducts();
+    },
 
-        $this.getProducts();
-
+    popupButtonsInit: function () {
+        var self = this;
         $('body').on('click', '.js-popup-button', function () {
-            if($(this).data('type') === 'resend') $this.getProducts();
+            if($(this).data('type') === 'resend') self.getProducts();
             $('.js-error-popup').remove();
         });
     },
 
     getProducts: function () {
-        var productsPromise = $.getJSON('./products.json');
-
-        $.fancybox.showLoading();
-
-        this.sleep().done(function () {
-            productsPromise
-                .done(this.parseProducts)
-                .fail(this.showErrorMessage)
-                .always($.fancybox.hideLoading);
-        }.bind(this));
+        $.ajax({
+            url: './products.json',
+            dataType: 'json',
+            beforeSend: function() {$.fancybox.showLoading()}
+        })
+            .done(this.parseProducts)
+            .fail(this.showErrorMessage)
+            .always($.fancybox.hideLoading);
     },
-
+    
     parseProducts: function (data) {
-        var template = _.template($('.js-products-template').html()),
-            categories = $('.js-category').toArray(),
-            products = [];
+        var $categories = $('.js-category'),
+            template = _.template($('#categoryProductsTemplate').html()),
+            products = [],
+            categoryTitles = {
+                'sale': 'Распродажа',
+                'promo': 'Промо-акция',
+                'recommended': 'Промо-акция'
+            };
 
         data.forEach(function(item){
             if(!products[item.type]) products[item.type] = [];
@@ -37,24 +44,13 @@ var products = {
             });
         });
 
-        categories.forEach(function (item) {
-            var categoryId = item.id;
-                categoryTitle = null;
-            
-            switch (categoryId) {
-                case 'sale':
-                    categoryTitle = 'Распродажа';
-                    break;
-                case 'promo':
-                    categoryTitle = 'Промо-акция';
-                    break;
-                case 'recommended':
-                    categoryTitle = 'Рекомендуемые товары';
-                    break;
-            }
+        $categories.each(function () {
+            var $category = this,
+                categoryId = this.id,
+                categoryTitle = categoryTitles[categoryId];
 
             if(products[categoryId]){
-                item.innerHTML = template({
+                $category.innerHTML = template({
                     title: categoryTitle,
                     list: products[categoryId]
                 });
@@ -63,23 +59,13 @@ var products = {
     },
 
     showErrorMessage: function (xhr, status, errorThrown) {
-        var messagePopup = _.template($('.js-error-message-template').html());
+        var messagePopup = _.template($('#errorMessageTemplate').html());
 
         $(messagePopup()).appendTo('body').addClass('_showed');
 
         console.log("Error: " + errorThrown);
         console.log("Status: " + status);
         console.dir(xhr);
-    },
-
-    sleep: function (time) {
-        var promise = new $.Deferred();
-
-        setTimeout(function () {
-            promise.resolve();
-        }, time || 1000);
-
-        return promise;
     }
 };
 

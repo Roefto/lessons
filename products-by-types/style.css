@@ -1,0 +1,78 @@
+body {
+    margin: 40px;
+}
+.category, .buttons-wrap {
+    overflow: hidden;
+}
+.category-title {
+    margin-bottom: 20px;
+}
+.products-list {
+    margin-bottom: 40px;
+    padding: 0;
+    overflow: hidden;
+}
+.products-list__item {
+    width: 33%;
+    float: left;
+    padding: 0 1%;
+    list-style-type: none;
+}
+.products-list__description {
+    font-weight: 600;
+}
+.load-error {
+    opacity: .8;
+    background-color: #000;
+    width: 44px;
+    height: 44px;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 6px;
+    color: #fff;
+    text-align: center;
+    animation-delay: .1s;
+}
+.popup-button {
+    width: 40%;
+    color: #000;
+    background: #fff;
+    margin: 0 5%;
+    border-bottom: 2px transparent;
+    border-style: double;
+    outline: none;
+    float: left;
+    display: block;
+}
+.popup-button_close:hover {
+    border-bottom-color: #d21d1d;
+}
+.popup-button_resend:hover {
+    border-bottom-color: #0bda2e;
+}
+.load-error, .content-wrap {
+    animation-duration: .5s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+.content-wrap {
+    opacity: 0;
+    padding: 20px;
+    animation-delay: .5s;
+}
+@keyframes expand {
+    100% {width:300px;height: 100px}
+}
+.load-error._showed {
+    animation-name: expand;
+}
+@keyframes fadein {
+    100% {opacity: 1}
+}
+.load-error._showed .content-wrap {
+    animation-name: fadein;
+}
