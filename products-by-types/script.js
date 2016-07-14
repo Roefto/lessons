@@ -32,7 +32,7 @@ var products = {
             categoryTitles = {
                 'sale': 'Распродажа',
                 'promo': 'Промо-акция',
-                'recommended': 'Промо-акция'
+                'recommended': 'Рекомендуемые товары'
             };
 
         data.forEach(function(item){
