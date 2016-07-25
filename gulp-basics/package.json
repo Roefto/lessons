@@ -5,8 +5,8 @@
   "main": "index.js",
   "repository": "",
   "scripts": {
-    "dev": "gulp --env development",
-    "prod": "gulp --env production"
+    "dev": "env NODE_ENV=development gulp",
+    "prod": "env NODE_ENV=production gulp"
   },
   "devDependencies": {
     "gulp": "^3.9.1",

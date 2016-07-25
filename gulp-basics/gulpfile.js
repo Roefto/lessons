@@ -1,4 +1,4 @@
-var isProd          = process.argv[3] === 'production',
+var isProd          = process.env.NODE_ENV === 'production',
     gulp            = require('gulp'),
     gutil           = require('gulp-util'),
     less            = require('gulp-less'),
